@@ -9,7 +9,7 @@
         body{
         padding-top: 10px;
         }
-        a {
+        a, label{
             font-size: 20pt;
             background-color: chocolate;
             padding: 10px 50px 10px 20px;
@@ -20,16 +20,17 @@
             transition: 0.5;
         }
 
-        a:hover {
+        a:hover, label:hover {
             background-color: aqua;
             border-radius: 0px 0px 20px 20px;
             transition: 0.5;
         }
 
-        a:active {
+        a:active, label:active {
             font-style: italic;
             color: blue;
         }
+
         #l1:hover {
             background-color: blanchedalmond;
         }
@@ -39,19 +40,18 @@
         #l3:hover {
             background-color: chartreuse;
         }
+
         img {
             align-items: center;
             width: 400px;
             height: 400px;
             border-radius: 50%;
+            display: block;
             margin: auto;
-            border: solid rgb(235, 85, 85) 20px;
-            border-width: 4px;
-            border-style: solid;
-            border-image: linear-gradient(to right, darkblue, darkorchid) 1;
-            transform: -50%;
-            position: absolute;
-            }
+            border: solid 10px transparent;
+            background: linear-gradient(90deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%) border-box;
+        }
+
             #menu {
                 display: flex;
                 gap: 20px ;
@@ -68,12 +68,12 @@
                 transition: 0.3s;
             }
 
-            .linha:hover{
-                height: 10px;
-                transform: 0.3s;
-            }
             #check {
                 display: none;
+            }
+
+            #check:checked ~ .linha{
+                width: 0%;
             }
 
     </style>
@@ -83,12 +83,12 @@
     <input type="checkbox" id="check">
 
     <div id="menu">
-        <div> <label for="check">link 1</label></div>  
+        <div> <label for="check">link 1</label> </div>  
         <div> <a id="l2" href="#2">link 2</a> </div>
         <div> <a id="l3" href="#3">link 3</a> </div>
     </div>
    <div>
-        
+
    </div>
    
    <img  src="img/sat.webp" alt="saturno">
